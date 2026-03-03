@@ -1,0 +1,123 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Mars | Portfolio</title>    <style>  
+    * { margin:0; padding:0; box-sizing:border-box; font-family:"Segoe UI", sans-serif; }  
+    body { background: radial-gradient(circle at top, #120c1f, #040404); color: #e5e7eb; overflow-x:hidden; scroll-behavior: smooth; }  
+  
+    :root {  
+      --gold: #f5c16c;  
+      --gold-glow: rgba(245, 193, 108, 0.6);  
+      --card: rgba(15, 15, 20, 0.9);  
+      --border: rgba(255,255,255,0.08);  
+    }  
+  
+    a { text-decoration: none; color: inherit; }  
+  
+    /* ===== MENU BUTTON ===== */  
+    .menu-btn { position: fixed; top:20px; right:20px; font-size:28px; cursor:pointer; z-index:1000; color: var(--gold); transition:0.3s; }  
+    .menu-btn:hover { text-shadow:0 0 15px var(--gold-glow); }  
+  
+    /* ===== SLIDING MENU ===== */  
+    .side-menu { position: fixed; top:0; right:-300px; width:280px; height:100vh; background: rgba(8,8,15,0.95); backdrop-filter: blur(12px); padding:80px 30px; transition:0.6s cubic-bezier(.68,-0.55,.27,1.55); z-index:999; border-left:1px solid var(--border); }  
+    .side-menu.open { right:0; }  
+    .side-menu a { display:block; font-size:20px; margin-bottom:30px; }  
+    .side-menu a:hover { color: var(--gold); text-shadow:0 0 12px var(--gold-glow); }  
+  
+    /* ===== HERO ===== */  
+    .hero { text-align:center; padding:120px 20px 90px; }  
+    .hero img { width:160px; height:160px; border-radius:50%; object-fit:cover; border:2px solid var(--gold); box-shadow:0 0 25px var(--gold-glow); margin-bottom:25px; }  
+    .hero h2 { font-size:36px; margin-bottom:15px; }  
+    .hero span { color: var(--gold); }  
+    .hero p { max-width:720px; margin:auto; color:#cbd5e1; font-size:15px; }  
+  
+    section { max-width:1100px; margin:auto; padding:80px 40px; }  
+    section h3 { font-size:28px; margin-bottom:40px; color: var(--gold); }  
+  
+    /* ===== SKILLS ===== */  
+    .skills { display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap:25px; }  
+    .skill { background: var(--card); padding:25px; border-radius:15px; text-align:center; border:1px solid var(--border); transition:0.3s; }  
+    .skill:hover { box-shadow:0 0 25px var(--gold-glow); transform:translateY(-6px); }  
+  
+    /* ===== PROJECTS ===== */  
+    .projects { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:35px; }  
+    .project { background: var(--card); padding:25px; border-radius:18px; border:1px solid var(--border); transition:0.3s; }  
+    .project:hover { box-shadow:0 0 30px var(--gold-glow); transform:translateY(-8px); }  
+    .project img { width:100%; border-radius:12px; margin-bottom:15px; transition: transform 0.5s ease, box-shadow 0.5s ease; }  
+    .project img:hover { transform: scale(1.05); box-shadow:0 0 25px var(--gold-glow); }  
+  
+    .buttons { display:flex; gap:15px; margin-top:15px; }  
+    .btn { padding:10px 20px; border-radius:25px; background: linear-gradient(135deg,#f5c16c,#e6a93f); color:#000; font-size:14px; transition:0.3s; }  
+    .btn:hover { box-shadow:0 0 20px var(--gold-glow); transform:translateY(-3px); }  
+  
+    /* ===== CONTACT BOX ===== */  
+    .contact-box { max-width:700px; margin:auto; background: rgba(20, 15, 35, 0.85); border-radius:25px; padding:45px; border:1px solid rgba(255,255,255,0.08); box-shadow:0 0 40px rgba(0,0,0,0.6); }  
+    .contact-box input, .contact-box textarea { width:100%; padding:14px; border-radius:12px; border:none; margin-bottom:20px; background:#e8e5f7; font-size:14px; }  
+    .contact-box textarea { height:140px; resize:none; }  
+  
+    footer { text-align:center; padding:35px; color:#9ca3af; font-size:14px; }  
+  
+    /* ===== FADE UP ===== */  
+    .fade-up { opacity: 0; transform: translateY(40px); transition: all 0.5s ease; display: block; } /* fade duration now 0.5s */  
+    .fade-up.show { opacity: 1; transform: translateY(0); }  
+  </style>  </head>  <body>    <div class="menu-btn" onclick="toggleMenu()">☰</div>  
+  <div class="side-menu" id="menu">  
+    <a href="#about" onclick="toggleMenu()">About</a>  
+    <a href="#skills" onclick="toggleMenu()">Skills</a>  
+    <a href="#projects" onclick="toggleMenu()">Projects</a>  
+    <a href="#contact" onclick="toggleMenu()">Contact</a>  
+  </div>    <!-- Hero Section with fade-up -->    <div class="hero fade-up" id="about">  
+    <img src="me.jpg">  
+    <h2>Hallo!!! I'm <span>Mars!</span></h2>  
+    <p>Hi! I’m a curious beginner developer learning how to turn ideas into interactive websites.  
+       I enjoy building fun projects with HTML, CSS, and JavaScript while improving my problem-solving skills one step at a time ✨️</p>  
+  </div>    <!-- Skills Section -->    <section id="skills" class="fade-up">  
+    <h3>My Skills</h3>  
+    <div class="skills">  
+      <div class="skill">HTML</div>  
+      <div class="skill">CSS</div>  
+      <div class="skill">JavaScript</div>  
+    </div>  
+  </section>    <!-- Projects Section -->    <section id="projects">  
+    <h3>My Projects</h3>  
+    <div class="projects">  
+      <div class="project fade-up"><img src="project1.png"><h4>General Knowledge Quiz</h4><p>A simple general knowledge quiz with a built in timer.</><div class="buttons"><a href="project1/project1.html" class="btn">Live Demo</a><a href="https://github.com/marsmousey/Portfolio-gk-quiz.git" class="btn">Source Code</a></div></div>  
+      <div class="project fade-up"><img src="project2.png"><h4>Tic Tac Toe</h4><p>Your classic X and O game with both a single and 2.wo player mode.</p><div class="buttons"><a href="project2/project2.html" class="btn">Live Demo</a><a href="https://github.com/marsmousey/Portfolio-Tic-tac-toe.git" class="btn">Source Code</a></div></div>  
+      <div class="project fade-up"><img src="project3.png"><h4>To-do List</h4><p>A to do list app with filters for categorization according to order, type and importance.</p><div class="buttons"><a href="project3/project3.html" class="btn">Live Demo</a><a href="https://github.com/marsmousey/Portfolio-Thoughtful-to-do.git" class="btn">Source Code</a></div></div>  
+      <div class="project fade-up"><img src="project4.png"><h4>Maria the Pet Mouse</h4><p>A cute pet mouse that can be fed and stroked.</p><div class="buttons"><a href="project4/project4.html" class="btn">Live Demo</a><a href="https://github.com/marsmousey/Portfoliomariathepetmouse.git" class="btn">Source Code</a></div></div>  
+      <div class="project fade-up"><img src="project5.png"><h4>Pinata!</h4><p>A cute pinata that explodes after 7 hits and can be restarted after explosion.</p><div class="buttons"><a href="project5/project5.html" class="btn">Live Demo</a><a href="https://github.com/marsmousey/Portfolio-pinata.git" class="btn">Source Code</a></div></div>  
+    </div>  
+  </section>    <!-- Contact Section -->    <section id="contact" class="fade-up">  
+    <h3>Contact Me</h3>  
+    <div class="contact-box">  
+      <input type="text" placeholder="Full Name">  
+      <input type="email" placeholder="Email Address">  
+      <textarea placeholder="Your Message"></textarea>  
+      <a href="mailto:mariaobayemi@gmail.com" class="btn">Send Message</a>  
+    </div>  
+  </section>    <footer>© 2026 Mars — Built with creativity ✨</footer>    <script>  
+    // Menu toggle  
+    function toggleMenu() { document.getElementById("menu").classList.toggle("open"); }  
+  
+    // Fade-up scroll animation  
+    const faders = document.querySelectorAll(".fade-up");  
+  
+    const appearOnScroll = new IntersectionObserver(  
+      (entries) => {  
+        entries.forEach(entry => {  
+          if (entry.isIntersecting) {  
+            entry.target.classList.add("show");  
+            appearOnScroll.unobserve(entry.target);  
+          }  
+        });  
+      },  
+      { threshold: 0.2 }  
+    );  
+  
+    faders.forEach((fader, i) => {  
+      fader.style.transitionDelay = `${i * 0.15}s`; // faster stagger (0.15s)  
+      appearOnScroll.observe(fader);  
+    });  
+  </script>  </body>  
+</html>

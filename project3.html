@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thoughtful To-Do</title>
+  <link rel="stylesheet" href="style3.css" />
+</head>
+<body>
+
+  <main class="app">
+
+    <header>
+      <h1>🖤 Thoughtful Tasks</h1>
+      <p class="subtitle">Do what matters. Gently.</p>
+    </header>
+
+    <!-- Add Task -->
+    <section class="add-task">
+      <input id="title" placeholder="What do you need to do?" />
+
+      <select id="category">
+        <option>Personal</option>
+        <option>Work</option>
+        <option>Hobby</option>
+        <option>Self-Care</option>
+        <option>Other</option>
+      </select>
+
+      <select id="priority">
+        <option value="High">High 🔴</option>
+        <option value="Medium">Medium 🟡</option>
+        <option value="Low">Low 🟢</option>
+      </select>
+
+      <input id="intent" placeholder="Why does this matter? (optional)" />
+
+      <button id="addBtn">Add Task</button>
+    </section>
+
+    <!-- Filters -->
+    <section class="controls">
+      <select id="sort">
+        <option value="priority">Sort by Priority</option>
+        <option value="category">Sort by Category</option>
+        <option value="newest">Newest First</option>
+      </select>
+    </section>
+
+    <!-- Tasks -->
+    <section id="taskList" class="tasks"></section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

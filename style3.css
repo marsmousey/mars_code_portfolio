@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #0b0b10;
+  color: #f3f3f3;
+  font-family: "Inter", system-ui, sans-serif;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  width: 360px;
+  background: #12121a;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(138, 43, 226, 0.25);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #c084fc;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.add-task input,
+.add-task select,
+.add-task button,
+.controls select {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #1c1c28;
+  color: white;
+}
+
+.add-task button {
+  background: linear-gradient(135deg, #7c3aed, #c084fc);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-task button:hover {
+  opacity: 0.9;
+}
+
+.tasks {
+  margin-top: 20px;
+}
+
+.task {
+  background: #1a1a26;
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  border-left: 4px solid;
+  transition: transform 0.2s;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+}
+
+.task.high { border-color: #ef4444; }
+.task.medium { border-color: #facc15; }
+.task.low { border-color: #22c55e; }
+
+.task h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.task .meta {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.task .intent {
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #c084fc;
+}
+
+.task.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+}

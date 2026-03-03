@@ -1,0 +1,137 @@
+body {
+  background: #fff8cc;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: system-ui, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.name-tag {
+  background: white;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.mouse {
+  width: 160px;
+  height: 140px;
+  background: #f2f2f2;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.mouse.happy {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.ear {
+  width: 50px;
+  height: 50px;
+  background: #e6e6e6;
+  position: absolute;
+  top: -20px;
+  border-radius: 50%;
+}
+
+.ear.left { left: 10px; }
+.ear.right { right: 10px; }
+
+.face {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 30px;
+}
+
+.eye {
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+}
+
+.nose {
+  width: 12px;
+  height: 8px;
+  background: pink;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bubble {
+  background: white;
+  padding: 10px 14px;
+  border-radius: 14px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  min-height: 24px;
+}
+
+.mood {
+  margin-top: 14px;
+  font-size: 0.8rem;
+}
+
+.bar {
+  width: 140px;
+  height: 8px;
+  background: #ddd;
+  border-radius: 10px;
+  margin: 6px auto;
+}
+
+#moodFill {
+  height: 100%;
+  width: 70%;
+  background: #ffcc66;
+  border-radius: 10px;
+  transition: width 0.3s;
+}
+
+#feedBtn {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  border: none;
+  background: #ffd966;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.food {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  animation: eat 1s forwards;
+}
+
+@keyframes eat {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -70%) scale(1.2); }
+  100% { transform: translate(-50%, -80%) scale(0); }
+}
+
+@media (max-width: 480px) {
+  .mouse {
+    width: 140px;
+    height: 120px;
+  }
+}
